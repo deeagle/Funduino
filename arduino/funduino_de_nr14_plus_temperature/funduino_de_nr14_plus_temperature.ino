@@ -10,7 +10,7 @@
  */
 
 #include <LiquidCrystal.h>
-#include "DeeLib.h"
+#include <DeeLib.h>
 
 const int TMP36 = A0;
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
