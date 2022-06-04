@@ -1,5 +1,7 @@
 # Funduino Project
 
+[![CI](https://github.com/deeagle/Funduino/actions/workflows/ci.yml/badge.svg)](https://github.com/deeagle/Funduino/actions/workflows/ci.yml)
+
 This project includes my experience with the Funduino UNO starter pack.
 Funduino UNO is a clone of the Arduino UNO.
 
@@ -7,7 +9,7 @@ I still develop some basic IoT actors
 based on the microcontrollers *arduino* and *esp8266/esp32*.
 Most of the time I used a debian based development environment.
 
-## Install the packages from the repo
+## Environment preparation
 
 There are some packages in the official repository (on *bullseye*, 11).
 
