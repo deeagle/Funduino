@@ -21,3 +21,16 @@ jobs:
           #config: '/lint/config/changelog.yml'
           args: 'README.md'
 
+  lint-python:
+    name: Lint python files
+    runs-on: ubuntu-latest
+    container:
+      image: flake8:latest
+    steps:
+      # stop the build if there are Python syntax errors or undefined names
+      - name: Check syntax errors
+        run: flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+
+      # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+      - name: Check project settings
+        run: flake8 . --count --exit-zero --max-complexity=10 --max-line-length=120 --statistics
