@@ -27,14 +27,14 @@ def get_logger(log_sys):
     logger = logging.getLogger(LOGGER_NAME)
     logger.setLevel(logging.DEBUG)
 
-    if (Logger.file == log_sys):
+    if Logger.file == log_sys:
         handler = logging.handlers.RotatingFileHandler(LOG_FILE, maxBytes=(1048576 * 5), backupCount=7)
         logging.basicConfig(filename=LOG_FILE,
                             filemode='a',
                             format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
                             datefmt='%H:%M:%S',
                             level=logging.DEBUG)
-    elif (Logger.syslog == log_sys):
+    elif Logger.syslog == log_sys:
         handler = logging.handlers.SysLogHandler(address=LOG_DEVICE)
         formatter_string = '[{0}] [%(process)d]: %(levelname)s %(message)s'.format(LOG_TAG)
         # handler.setFormatter(logging.Formatter('%(pathname)s [%(process)d]: %(levelname)s %(message)s'))
