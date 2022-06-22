@@ -5,10 +5,11 @@ import serial
 import logging
 import logging.handlers
 
-
 '''
     Logger enumeration
 '''
+
+
 class Logger:
     file = 0
     syslog = 1
