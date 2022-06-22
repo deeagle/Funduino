@@ -25,7 +25,7 @@ jobs:
     name: Lint python files
     runs-on: ubuntu-latest
     container:
-      image: flake8:latest
+      image: pipelinecomponents/flake8:latest
     steps:
       # stop the build if there are Python syntax errors or undefined names
       - name: Check syntax errors
