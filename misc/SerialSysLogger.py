@@ -21,6 +21,7 @@ LOGGER_NAME = 'ARDUINO_LOG'
 
 
 def get_logger(log_sys):
+    """Returns the chosen logger with pre-set config."""
     logger = logging.getLogger(LOGGER_NAME)
     logger.setLevel(logging.DEBUG)
 
