@@ -59,7 +59,10 @@ There are some packages in the official repository (on *bullseye*, 11).
 
 ## Weblinks
 
-- [Funduino project URL](http://funduino.de)
-- [Funduino starter pack](http://funduino.de/lernsets)
-- [Funduino Tutorials de](http://funduino.de/anleitungen)
-  - [Funduino Tutorials en](http://funduino.de/Arduino-tutorials-en.pdf)
+- [Repo on github.com](https://github.com/deeagle/Funduino)
+- Funduino
+  - [Project URL](http://funduino.de)
+  - [Starter pack](http://funduino.de/lernsets)
+  - Tutorials
+    - [de (html)](http://funduino.de/anleitungen)
+    - [en (pdf)](http://funduino.de/Arduino-tutorials-en.pdf)

@@ -6,10 +6,8 @@ import logging
 import logging.handlers
 
 
-'''
-    Logger enumeration
-'''
 class Logger:
+    """Own enumeration class to set the log output."""
     file = 0
     syslog = 1
 
@@ -23,17 +21,18 @@ LOGGER_NAME = 'ARDUINO_LOG'
 
 
 def get_logger(log_sys):
+    """Returns the chosen logger with pre-set config."""
     logger = logging.getLogger(LOGGER_NAME)
     logger.setLevel(logging.DEBUG)
 
-    if (Logger.file == log_sys):
+    if Logger.file == log_sys:
         handler = logging.handlers.RotatingFileHandler(LOG_FILE, maxBytes=(1048576 * 5), backupCount=7)
         logging.basicConfig(filename=LOG_FILE,
                             filemode='a',
                             format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
                             datefmt='%H:%M:%S',
                             level=logging.DEBUG)
-    elif (Logger.syslog == log_sys):
+    elif Logger.syslog == log_sys:
         handler = logging.handlers.SysLogHandler(address=LOG_DEVICE)
         formatter_string = '[{0}] [%(process)d]: %(levelname)s %(message)s'.format(LOG_TAG)
         # handler.setFormatter(logging.Formatter('%(pathname)s [%(process)d]: %(levelname)s %(message)s'))
@@ -46,16 +45,14 @@ def get_logger(log_sys):
     return logger
 
 
-#
-# Runtime
-#
-ser = serial.Serial(SERIAL_PORT, SERIAL_BAUD)
-LOG = get_logger(Logger.file)
+if __name__ == '__main__':
+    ser = serial.Serial(SERIAL_PORT, SERIAL_BAUD)
+    LOG = get_logger(Logger.file)
 
-while True:
-    ser_data = ser.readline()
+    while True:
+        ser_data = ser.readline()
 
-    # decode the byte string from the arduino to a unicode string
-    unicode_from_byte_string = ser_data.decode('unicode_escape')
-    # print(ser_data)
-    LOG.debug(unicode_from_byte_string)
+        # decode the byte string from the arduino to a unicode string
+        unicode_from_byte_string = ser_data.decode('unicode_escape')
+        # print(ser_data)
+        LOG.debug(unicode_from_byte_string)
