@@ -47,16 +47,14 @@ def get_logger(log_sys):
     return logger
 
 
-#
-# Runtime
-#
-ser = serial.Serial(SERIAL_PORT, SERIAL_BAUD)
-LOG = get_logger(Logger.file)
+if __name__ == '__main__':
+    ser = serial.Serial(SERIAL_PORT, SERIAL_BAUD)
+    LOG = get_logger(Logger.file)
 
-while True:
-    ser_data = ser.readline()
+    while True:
+        ser_data = ser.readline()
 
-    # decode the byte string from the arduino to a unicode string
-    unicode_from_byte_string = ser_data.decode('unicode_escape')
-    # print(ser_data)
-    LOG.debug(unicode_from_byte_string)
+        # decode the byte string from the arduino to a unicode string
+        unicode_from_byte_string = ser_data.decode('unicode_escape')
+        # print(ser_data)
+        LOG.debug(unicode_from_byte_string)
