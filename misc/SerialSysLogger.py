@@ -5,12 +5,9 @@ import serial
 import logging
 import logging.handlers
 
-'''
-    Logger enumeration
-'''
-
 
 class Logger:
+    """Own enumeration class to set the log output."""
     file = 0
     syslog = 1
 
