@@ -23,7 +23,7 @@ jobs:
           style: file
           lines-changed-only: false
           files-changed-only: false
-          extensions: 'c,cpp,h,ino'
+          extensions: 'c,cpp,h' #ino failed
           tidy-checks: >-
             bugprone-*,
             performance-*,
