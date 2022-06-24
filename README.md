@@ -1,6 +1,7 @@
 # Funduino Project
 
 [![CI](https://github.com/deeagle/Funduino/actions/workflows/ci.yml/badge.svg)](https://github.com/deeagle/Funduino/actions/workflows/ci.yml)
+[![cpp-linter](https://github.com/deeagle/Funduino/actions/workflows/cpp-linter.yml/badge.svg)](https://github.com/deeagle/Funduino/actions/workflows/cpp-linter.yml)
 
 This project includes my experience with the Funduino UNO starter pack.
 Funduino UNO is a clone of the Arduino UNO.
@@ -66,3 +67,4 @@ There are some packages in the official repository (on *bullseye*, 11).
   - Tutorials
     - [de (html)](http://funduino.de/anleitungen)
     - [en (pdf)](http://funduino.de/Arduino-tutorials-en.pdf)
+- [cpp-linter](https://github.com/cpp-linter/cpp-linter-action)
